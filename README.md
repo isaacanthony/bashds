@@ -14,7 +14,7 @@ the following commands will concatenate them into a single file, `all.csv`.
 
 ```
 ls *.csv | head -1 | xargs -I {} head -1 {} > all.csv
-ls *.csv | xargs -I {} tail -n +2 {} >> all.csv
+ls *.csv | grep -v all.csv | xargs -I {} tail -n +2 {} >> all.csv
 ```
 
 #### CSVs with no Header Row
