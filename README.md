@@ -10,11 +10,11 @@ Given a directory of CSVs all containing:
 * identical columns
 * file names ending with `.csv`
 
-the following commands will concatenate them into a single file, `concatenated.csv`.
+the following commands will concatenate them into a single file, `all.csv`.
 
 ```
-ls *.csv | head -1 | xargs -I {} head -1 {} > concatenated.csv
-ls *.csv | xargs -I {} tail -n +2 {} >> concatenated.csv
+ls *.csv | head -1 | xargs -I {} head -1 {} > all.csv
+ls *.csv | xargs -I {} tail -n +2 {} >> all.csv
 ```
 
 #### CSVs with no Header Row
@@ -24,9 +24,9 @@ Given a directory of CSVs all containing:
 * identical columns
 * file names ending with `.csv`
 
-the following commands will concatenate them into a single file, `concatenated.csv`.
+the following commands will concatenate them into a single file, `all.csv`.
 
 ```
-rm concatenated.csv && touch concatenated.csv
-ls *.csv | xargs -I {} cat {} >> concatenated.csv
+rm all.csv && touch all.csv
+ls *.csv | xargs -I {} cat {} >> all.csv
 ```
