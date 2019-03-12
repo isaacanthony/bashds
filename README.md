@@ -3,6 +3,7 @@ Bash commands for Data Science
 
 ## Table of Contents
 * [Concatenating CSVs](#concatenating-csvs)
+* [Decrypting Files](#decrypting-files)
 * [File Encodings](#file-encodings)
 
 ## <a name="concatenating-csvs"></a> Concatenating CSVs
@@ -33,6 +34,14 @@ the following commands will concatenate them into a single file, `all.csv`.
 ```
 rm all.csv && touch all.csv
 ls *.csv | grep -v all.csv | xargs -I {} cat {} >> all.csv
+```
+
+## <a name="decrypting-files"></a> Decrypting Files
+
+### Decrypting Files using PGP
+Given a file `file.csv.pgp` encrypted using PGP, the following command will decrypt the file and store it as `file.csv`.
+```
+gpg --output file.csv --decrypt file.csv.pgp
 ```
 
 ## <a name="file-encodings"></a> File Encodings
