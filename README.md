@@ -47,7 +47,7 @@ file -i data.csv
 ## <a name="file-encryption"></a> File Encryption
 
 ### Decrypting Files using PGP
-Given a file `data.csv.pgp` encrypted using PGP, the following command will decrypt the file and store it as `data.csv`.
+Given a file `data.csv.pgp` encrypted using PGP, the following command will decrypt the file and store it as `data.csv`. You will be automatically prompted for the password associated with your PGP key.
 ```
 gpg --output data.csv --decrypt data.csv.pgp
 ```
