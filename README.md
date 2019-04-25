@@ -3,6 +3,7 @@ Bash commands for Data Science
 
 ## Table of Contents
 * [CSV Concatenation](#csv-concatenation)
+* [CSV Splitting](#csv-splitting)
 * [File Encoding](#file-encoding)
 * [File Encryption](#file-encryption)
 
@@ -34,6 +35,13 @@ the following commands will concatenate them into a single file, `all.csv`.
 ```
 rm all.csv && touch all.csv
 ls *.csv | grep -v all.csv | xargs -I {} cat {} >> all.csv
+```
+
+## <a name="csv-splitting"></a> CSV Splitting
+Given a CSV `data.csv`, the following command will split it into N subfiles each of size 1gb.
+The resulting files will be placed in the same directory and named xaa, xab, xac, etc.
+```
+split -C 1000m data.csv
 ```
 
 ## <a name="file-encoding"></a> File Encoding
