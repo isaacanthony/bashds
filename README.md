@@ -6,6 +6,7 @@ Bash commands for Data Science
 * [CSV Splitting](#csv-splitting)
 * [File Encoding](#file-encoding)
 * [File Encryption](#file-encryption)
+* [File Size](#file-size)
 
 ## <a name="csv-concatenation"></a> CSV Concatenation
 
@@ -64,4 +65,18 @@ gpg --output data.csv --decrypt data.csv.pgp
 Given a directory `data`, the following command will create an encrypted ZIP file of that directory and store it as `data.zip`. You will be automatically prompted from the command line for the password to be used in the encryption/decryption.
 ```
 zip -er data.zip data
+```
+
+## <a name="file-size"></a> File Size
+
+### Detecting File Size
+Given a file `data.csv`, the following command will return its size in GB.
+```
+du -h data.csv
+```
+
+### Detecting Directory Size
+Given a directory `data`, the following command will return its size in GB.
+```
+du -h data
 ```
