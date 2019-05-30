@@ -4,6 +4,7 @@ Bash commands for Data Science
 ## Table of Contents
 * [CSV Concatenation](#csv-concatenation)
 * [CSV Splitting](#csv-splitting)
+* [File Compression](#file-compression)
 * [File Encoding](#file-encoding)
 * [File Encryption](#file-encryption)
 * [File Size](#file-size)
@@ -43,6 +44,14 @@ Given a CSV `data.csv`, the following command will split it into N subfiles each
 The resulting files will be placed in the same directory and named xaa, xab, xac, etc.
 ```
 split -C 1000m data.csv
+```
+
+## <a name="file-compression"></a> File Compression
+
+### Extracting a .tar.gz File
+Given a tarball-gzipped archive file, `file.tar.gz`, the following command will extract its contents.
+```
+tar xvzf file.tar.gz
 ```
 
 ## <a name="file-encoding"></a> File Encoding
