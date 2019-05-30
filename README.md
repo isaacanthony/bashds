@@ -4,6 +4,7 @@ Bash commands for Data Science
 ## Table of Contents
 * [CSV Concatenation](#csv-concatenation)
 * [CSV Splitting](#csv-splitting)
+* [Dockerized JupyterLab](#dockerized-jupyterlab)
 * [File Compression](#file-compression)
 * [File Encoding](#file-encoding)
 * [File Encryption](#file-encryption)
@@ -44,6 +45,40 @@ Given a CSV `data.csv`, the following command will split it into N subfiles each
 The resulting files will be placed in the same directory and named xaa, xab, xac, etc.
 ```
 split -C 1000m data.csv
+```
+
+## <a name="dockerized-jupyterlab"></a> Dockerized JupyterLab
+
+### Run a SciPy Notebook in a Docker Container
+The following command will run a local SciPy Notebook docker container on http://localhost:8888.
+```
+docker run -d --name scipy -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v $PWD:/home/jovyan jupyter/scipy-notebook
+```
+
+The following command will print the access token required to access the notebook.
+```
+docker logs scipy
+```
+
+The following command will stop the notebook.
+```
+docker stop scipy && docker rm scipy
+```
+
+### Run a PySpark Notebook in a Docker Container
+The following command will run a local PySpark Notebook docker container on http://localhost:8888.
+```
+docker run -d --name pyspark -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v $PWD:/home/jovyan jupyter/pyspark-notebook
+```
+
+The following command will print the access token required to access the notebook.
+```
+docker logs pyspark
+```
+
+The following command will stop the notebook.
+```
+docker stop pyspark && docker rm pyspark
 ```
 
 ## <a name="file-compression"></a> File Compression
