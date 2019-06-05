@@ -89,6 +89,12 @@ Given a tarball-gzipped archive file, `file.tar.gz`, the following command will 
 tar xvzf file.tar.gz
 ```
 
+### Extracting a .zip File
+Given a ZIP file, `data.zip`, the following command will extract its contents into a directory named `data`.
+```
+unzip data.zip -d data
+```
+
 ## <a name="file-encoding"></a> File Encoding
 
 ### Detecting a File's Encoding
